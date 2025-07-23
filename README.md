@@ -19,10 +19,6 @@ git clone https://github.com/Aguilar26/PlantillaBase_ProyectoDjango.git
 cd nombre-del-proyecto
 ```
 
-#### Opción B: Crear proyecto desde cero
-```bash
-# Crear carpeta del proyecto
-mkdir mi-proyecto-libreria
 cd mi-proyecto-libreria
 ```
 
