@@ -75,15 +75,6 @@ INSTALLED_APPS = [
 ]
 ```
 
-#### Crear `libreria/urls.py`:
-```python
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('', views.index, name='index'),
-]
-```
 
 #### Crear vista básica en `libreria/views.py`:
 ```python
@@ -105,15 +96,6 @@ urlpatterns = [
 ```
 
 ### 6. Configurar la base de datos
-
-#### Para desarrollo (SQLite - por defecto):
-```bash
-# Crear migraciones iniciales
-python manage.py makemigrations
-
-# Aplicar migraciones
-python manage.py migrate
-```
 
 #### Para producción (PostgreSQL):
 Modifica `config/settings.py`:
