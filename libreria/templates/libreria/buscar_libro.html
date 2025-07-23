@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Libro</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/Buscar_libros.css' %}">
+    <script src="{% static 'js/interacciones_buscar_libros.js' %}" defer></script>
+
+    <script src="{% static 'js/interacciones_busqueda.js' %}" defer></script>
+</head>
+<body>
+    <h1>🔍 Buscar libros </h1>
+
+    <form method="GET">
+        <label for="query">Título, autor o género:</label>
+        <input type="text" name="query" id="query" placeholder="Ej. García Márquez" required>
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if resultados %}
+        <h2>Resultados encontrados:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Género</th>
+                    <th>Año</th>
+                    <th>ISBN</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for libro in resultados %}
+                <tr>
+                    <td>{{ libro.id }}</td>
+                    <td>{{ libro.titulo }}</td>
+                    <td>{{ libro.autor }}</td>
+                    <td>{{ libro.genero }}</td>
+                    <td>{{ libro.anio_publicacion }}</td>
+                    <td>{{ libro.isbn }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% elif query %}
+        <p>No se encontraron resultados para: <strong>{{ query }}</strong></p>
+    {% endif %}
+
+    <p><a href="{% url 'inicio' %}">← Volver al inicio</a></p>
+</body>
+</html>

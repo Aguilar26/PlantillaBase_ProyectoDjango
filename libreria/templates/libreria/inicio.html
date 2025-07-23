@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca Virtual</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+    <script src="{% static 'js/interacciones.js' %}" defer></script>
+</head>
+<body>
+    <header>
+        <h1>📚 Bienvenido a tu  Biblioteca digital 📚 </h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'formulario_libro' %}">Registrar Libro</a></li>
+                <li><a href="{% url 'listado_libros' %}">Ver Inventario</a></li>
+                <li><a href="{% url 'buscar_libro' %}">Buscar Libros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Biblioteca Virtual - Julian Solorzano</p>
+    </footer>
+</body>
+</html>

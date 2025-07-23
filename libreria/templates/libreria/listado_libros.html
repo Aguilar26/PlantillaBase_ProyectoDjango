@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventario de Libros</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/listado_libros.css' %}">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 0.5rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f3f3f3;
+        }
+        tr:hover {
+            background-color: #eef;
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 Inventario de Libros</h1>
+
+    {% if libros %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Género</th>
+                    <th>Año</th>
+                    <th>ISBN</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for libro in libros %}
+                <tr>
+                    <td>{{ libro.id }}</td>
+                    <td>{{ libro.titulo }}</td>
+                    <td>{{ libro.autor }}</td>
+                    <td>{{ libro.genero }}</td>
+                    <td>{{ libro.anio_publicacion }}</td>
+                    <td>{{ libro.isbn }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No hay libros registrados todavía.</p>
+    {% endif %}
+
+    <p><a href="{% url 'inicio' %}">← Volver al inicio</a></p>
+</body>
+</html>

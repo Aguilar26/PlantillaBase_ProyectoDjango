@@ -1,0 +1,162 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: #ff6b35;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+/* Tabla de inventario */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Encabezados de tabla */
+th {
+    background-color: #1f1f1f;
+    color: #ff6b35;
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #404040;
+}
+
+/* Celdas de tabla */
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #000000;
+    color: #857979;
+}
+
+/* Hover en filas */
+tr:hover {
+    background-color: #3a3a3a;
+    transition: background-color 0.3s ease;
+}
+
+/* Mensaje sin libros */
+p:not(:last-child) {
+    text-align: center;
+    background-color: #2d2d2d;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #404040;
+    margin: 20px 0;
+    font-size: 1.1rem;
+    color: #ff6b35;
+}
+
+/* Enlace de vuelta */
+p:last-child {
+    text-align: center;
+    margin-top: 40px;
+}
+
+p:last-child a {
+    color: #ff6b35;
+    text-decoration: none;
+    padding: 12px 25px;
+    border: 2px solid #ff6b35;
+    border-radius: 5px;
+    transition: all 0.3s;
+    display: inline-block;
+    font-weight: bold;
+}
+
+p:last-child a:hover {
+    background-color: #ff6b35;
+    color: #1a1a1a;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 15px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 8px 6px;
+    }
+    
+    /* Tabla scrollable en móvil */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr {
+        border: 1px solid #404040;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #2d2d2d;
+        display: block;
+        white-space: normal;
+    }
+    
+    td {
+        border: none;
+        position: relative;
+        padding-left: 30%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: block;
+        text-align: right;
+    }
+    
+    td:before {
+        content: attr(data-label) ": ";
+        position: absolute;
+        left: 6px;
+        width: 25%;
+        text-align: left;
+        font-weight: bold;
+        color: #ff6b35;
+    }
+}

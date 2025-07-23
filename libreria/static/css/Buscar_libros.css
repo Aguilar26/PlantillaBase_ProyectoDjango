@@ -1,0 +1,193 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: #ff6b35;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+/* Formulario de búsqueda */
+form {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    background-color: #2d2d2d;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    border: 1px solid #404040;
+}
+
+/* Label del formulario */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ff6b35;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Input de búsqueda */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #404040;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+input[type="text"]:focus {
+    border-color: #ff6b35;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 107, 53, 0.3);
+}
+
+/* Placeholder */
+input::placeholder {
+    color: #888;
+}
+
+/* Botón de búsqueda */
+button[type="submit"] {
+    background-color: #ff6b35;
+    color: #1a1a1a;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #e55a2b;
+    transform: translateY(-2px);
+}
+
+/* Título de resultados */
+h2 {
+    color: #ff6b35;
+    margin: 30px 0 20px 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Tabla de resultados */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    margin-bottom: 30px;
+}
+
+/* Encabezados de tabla */
+th {
+    background-color: #1f1f1f;
+    color: #ff6b35;
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #404040;
+}
+
+/* Celdas de tabla */
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #404040;
+    color: #e0e0e0;
+}
+
+/* Hover en filas */
+tr:hover {
+    background-color: #3a3a3a;
+}
+
+/* Mensaje sin resultados */
+p:not(:last-child) {
+    text-align: center;
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #404040;
+    margin: 20px 0;
+}
+
+p strong {
+    color: #ff6b35;
+}
+
+/* Enlace de vuelta */
+p:last-child {
+    text-align: center;
+    margin-top: 40px;
+}
+
+p:last-child a {
+    color: #ff6b35;
+    text-decoration: none;
+    padding: 12px 25px;
+    border: 2px solid #ff6b35;
+    border-radius: 5px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+p:last-child a:hover {
+    background-color: #ff6b35;
+    color: #1a1a1a;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 15px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    form {
+        padding: 20px;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 10px 8px;
+    }
+    
+    /* Tabla scrollable en móvil */
+    .table-container {
+        overflow-x: auto;
+    }
+}
